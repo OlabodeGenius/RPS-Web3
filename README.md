@@ -154,8 +154,8 @@ This project is licensed under the MIT License – see LICENSE file for details.
 
 **Olabode Emmanuel Ebiniyi**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: [@OlabodeGenius](https://github.com/olabodegenius)
+- Email: ebiniyiolabode@gmail.com
 
 ---
 
