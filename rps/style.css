@@ -1,0 +1,235 @@
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== BODY ========== */
+body {
+    background: #1c1e26;
+    font-family: "Inter", Arial, sans-serif;
+    color: #ffffff;
+}
+
+/* ========== HEADER ========== */
+header {
+    background: #ffffff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #1c1e26;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.header-right {
+    text-align: right;
+}
+
+#connectBtn {
+    padding: 10px 20px;
+    background: #ff6b5b;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#connectBtn:hover {
+    background: #ff8275;
+    transform: translateY(-2px);
+}
+
+#walletAddress {
+    margin-top: 6px;
+    color: #333333;
+    font-size: 12px;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.game-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+/* ========== SCOREBOARD ========== */
+.score-board {
+    margin: 40px auto 20px auto;
+    border: 3px solid #ffffff;
+    padding: 20px 40px;
+    width: 260px;
+    text-align: center;
+    font-size: 48px;
+    position: relative;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
+}
+
+.badge {
+    background: #ff6b5b;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
+    top: -18px;
+    color: #ffffff;
+}
+
+#user-label {
+    left: -25px;
+}
+
+#computer-label {
+    right: -35px;
+}
+
+/* ========== RESULT TEXT ========== */
+.result > p {
+    margin-top: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ========== CHOICES ========== */
+.choices {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.choice {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 25px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+}
+
+.choice:hover {
+    background: #ff6b5b;
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255, 90, 80, 0.8);
+}
+
+.choice img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* ========== ACTION MESSAGE ========== */
+#action-msg {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+}
+
+/* ========== LOADER (SPINNER) ========== */
+.loader {
+    margin: 10px auto 0;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-top: 6px solid #ff6b5b;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+}
+
+.hidden {
+    /* generic utility, but popup had overridden it before */
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========== POPUP & OVERLAY ========== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9;
+}
+
+.popup {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup-content {
+    background: #252734;
+    padding: 30px 40px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255, 107, 91, 0.7);
+    animation: pop-in 0.25s ease-out;
+}
+
+.popup-content h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#popup-close {
+    padding: 8px 18px;
+    background: #ff6b5b;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#popup-close:hover {
+    background: #ff8275;
+    transform: translateY(-1px);
+}
+
+@keyframes pop-in {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* IMPORTANT FIX: when .hidden is combined with .popup / .overlay, force display:none */
+.popup.hidden,
+.overlay.hidden {
+    display: none !important;
+}

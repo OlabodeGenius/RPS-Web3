@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Web3</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Rock Paper Scissors Web3</h1>
+
+    <div class="header-right">
+        <button id="connectBtn">Connect Wallet</button>
+        <p id="walletAddress"></p>
+    </div>
+</header>
+
+<main class="game-container">
+
+    <div class="score-board">
+        <div id="user-label" class="badge">USER</div>
+        <div id="computer-label" class="badge">COMP</div>
+        <span id="user-score">0</span>:<span id="computer-score">0</span>
+    </div>
+
+    <div class="result">
+        <p>Waiting...</p>
+    </div>
+
+    <div id="loader" class="loader hidden"></div>
+
+    <div class="choices">
+        <div class="choice" id="r" title="Rock">
+            <img src="images/rock.png" alt="Rock">
+        </div>
+        <div class="choice" id="p" title="Paper">
+            <img src="images/paper.png" alt="Paper">
+        </div>
+        <div class="choice" id="s" title="Scissors">
+            <img src="images/scissors.png" alt="Scissors">
+        </div>
+    </div>
+
+    <p id="action-msg">Make your move.</p>
+
+</main>
+
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <h2 id="popup-title">Result</h2>
+        <p id="popup-text"></p>
+        <button id="popup-close">Play again</button>
+    </div>
+</div>
+
+<div id="overlay" class="overlay hidden"></div>
+
+<!-- IMPORTANT: load ethers FIRST, then app.js, no type="module" -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
